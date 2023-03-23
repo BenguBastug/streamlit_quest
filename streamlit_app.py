@@ -8,4 +8,4 @@ link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/weather20
 
 df_weather = pd.read_csv(link)
 
-st.write(df_weather)
+df_weather
