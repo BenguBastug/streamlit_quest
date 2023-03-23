@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 st.title('Hello Wilders, welcome to my application!')
 st.write('I enjoy to discover streamlit possibilities')
@@ -9,6 +7,9 @@ st.write('I enjoy to discover streamlit possibilities')
 link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/weather2019.csv"
 df_weather = pd.read_csv(link)
 df_weather
+
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 viz_correlation = sns.heatmap(df_weather.corr(),
                               center=0,
