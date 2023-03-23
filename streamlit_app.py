@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+
 st.title('Hello Wilders, welcome to my application!')
 st.write("I enjoy to discover streamlit possibilities")
 
