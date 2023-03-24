@@ -4,7 +4,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 st.title("Let's explore cars!")
-st.write('And decide which one is better for us')
 
 link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df_cars = pd.read_csv(link)
@@ -12,10 +11,10 @@ df_cars
 
 
 continents = ['US','Europe','Japan']
-dropdown = st.selectbox('Select a Region:', continents)
-st.write('**You have selected**',dropdown)
+dropdown = st.radio('Select a Region:', continents)
+st.write('**You have selected:**',dropdown)
 
-weight_hp_corr = sns.scatterplot(data = df_cars,
+weight_hp_corr = sns.scatterplot(data = df_cars[df_cars['continent']==dropdown],
                                  x = 'weightlbs',
                                  y = 'hp',
                                  hue = 'year',
