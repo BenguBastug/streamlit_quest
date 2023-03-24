@@ -15,7 +15,7 @@ dropdown = st.radio('Select a Region:', continents)
 st.write('**You have selected:**',dropdown)
 
 if dropdown:
-  weight_hp_corr = sns.scatterplot(data = df_cars,
+  weight_hp_corr = sns.scatterplot(data = df_cars[df_cars['continent']==dropdown],
                                    x = 'weightlbs',
                                    y = 'hp',
                                    hue = 'year',
