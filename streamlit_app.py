@@ -31,6 +31,6 @@ st.pyplot(viz_correlation.figure)
 
 continents = ('US','Europe','Japan')
 dropdown = st.selectbox('Select a Region:', continents)
-
+mean_value_table = df_cars.groupby(continents).mean()
 
 
