@@ -14,15 +14,16 @@ continents = ['US','Europe','Japan']
 dropdown = st.radio('Select a Region:', continents)
 st.write('**You have selected:**',dropdown)
 
-weight_hp_corr = sns.scatterplot(data = df_cars,
-                                 x = 'weightlbs',
-                                 y = 'hp',
-                                 hue = 'year',
-                                 size = 'cylinders',
-                                 palette = 'coolwarm'
-                                )
-plt.title("Weight-Hp")
-st.pyplot(weight_hp_corr.figure)
+if dropdown:
+  weight_hp_corr = sns.scatterplot(data = df_cars,
+                                   x = 'weightlbs',
+                                   y = 'hp',
+                                   hue = 'year',
+                                   size = 'cylinders',
+                                   palette = 'coolwarm'
+                                  )
+  plt.title("Weight-Hp")
+  st.pyplot(weight_hp_corr.figure)
 
 
 #viz_correlation = sns.heatmap(df_cars.corr(),
