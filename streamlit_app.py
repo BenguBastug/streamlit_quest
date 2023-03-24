@@ -14,4 +14,6 @@ viz_correlation = sns.heatmap(df.corr(),
                               center=0,
                               cmap = sns.color_palette("vlag", as_cmap=True)
                              )
+plt.title("HeatMap")
 st.pyplot(viz_correlation.figure)
+
