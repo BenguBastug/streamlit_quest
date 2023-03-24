@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-%matplotlib inline
 
 st.title("Let's explore cars!")
 st.write('And decide which one is better for us')
