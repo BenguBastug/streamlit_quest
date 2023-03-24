@@ -11,7 +11,7 @@ df_cars = pd.read_csv(link)
 df_cars
 
 
-continents = ('US','Europe','Japan')
+continents = ['US','Europe','Japan']
 dropdown = st.selectbox('Select a Region:', continents)
 
 
