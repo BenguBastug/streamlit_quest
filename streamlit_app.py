@@ -12,12 +12,12 @@ df_cars
 
 
 
-# viz_correlation = sns.heatmap(df_cars.corr(),
-#                              center=0,
-#                              cmap = sns.color_palette("vlag", as_cmap=True)
-#                             )
-#plt.title("HeatMap")
-#st.pyplot(viz_correlation.figure)
+viz_correlation = sns.heatmap(df_cars.corr(),
+                              center=0,
+                              cmap = sns.color_palette("vlag", as_cmap=True)
+                             )
+plt.title("HeatMap")
+st.pyplot(viz_correlation.figure)
 
 
 
