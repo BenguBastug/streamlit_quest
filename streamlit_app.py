@@ -26,7 +26,7 @@ weight_hp_corr = sns.scatterplot(data = df_cars,
                                  y = 'hp',
                                  hue = 'year',
                                  size = 'cylinders',
-                                 palette = 'coolwarm')
-
+                                 palette = 'coolwarm'
+                                )
 plt.title("Weight-Hp")
 st.pyplot(weight_hp_corr.figure)
