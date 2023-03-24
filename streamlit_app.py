@@ -15,7 +15,7 @@ continents = ('US','Europe','Japan')
 dropdown = st.selectbox('Select a Region:', continents)
 
 
-weight_hp_corr = sns.scatterplot(data = df_cars[df['continent']==dropdown,
+weight_hp_corr = sns.scatterplot(data = df_cars[df['continent']==dropdown],
                                  x = 'weightlbs',
                                  y = 'hp',
                                  hue = 'year',
