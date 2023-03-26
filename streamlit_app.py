@@ -50,12 +50,12 @@ if region == 'All Regions':
   plt.title("HeatMap All Regions")
   st.pyplot(viz_correlation.figure)
 
-  sns.scatterplot(data = df,
-                  x = 'weightlbs',
-                  y = 'hp',
-                  hue = 'year',
-                  size = 'cylinders',
-                  palette = 'coolwarm'
-                  )
-  plt.title("Weight-Hp")
-  st.pyplot()
+#  sns.scatterplot(data = df,
+#                  x = 'weightlbs',
+#                  y = 'hp',
+#                  hue = 'year',
+#                  size = 'cylinders',
+#                  palette = 'coolwarm'
+#                  )
+#  plt.title("Weight-Hp")
+#  st.pyplot()
