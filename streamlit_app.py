@@ -12,11 +12,10 @@ df = pd.read_csv(link)
 #cars_jp = df[df['continent'] == 'Japan.']
 
 continents = ['US','Europe','Japan','All Regions']
-region = st.sidebar.selectbox('Select Region:', continents)
+region = st.selectbox('Select Region:', continents)
 
 if region == 'Europe':
-  df = df[df['continent'] == 'Europe.']
-  viz_correlation_eu = sns.heatmap(df.corr(),
+  viz_correlation_eu = sns.heatmap(df[df['continent'] == 'Europe.'].corr(),
                                    center=0,
                                    cmap = sns.color_palette("vlag", as_cmap=True)
                                   )
@@ -24,8 +23,8 @@ if region == 'Europe':
   st.pyplot(viz_correlation_eu.figure)
 
 if region == 'US':
-  df = df[df['continent'] == 'US.']
-  viz_correlation_us = sns.heatmap(df.corr(),
+#  df = df[df['continent'] == 'US.']
+  viz_correlation_us = sns.heatmap(df[df['continent'] == 'US.'].corr(),
                                    center=0,
                                    cmap = sns.color_palette("vlag", as_cmap=True)
                                   )
@@ -33,8 +32,8 @@ if region == 'US':
   st.pyplot(viz_correlation_us.figure)
 
 if region == 'Japan':
-  df = df[df['continent'] == 'Japan.']
-  viz_correlation_jp = sns.heatmap(df.corr(),
+#  df = df[df['continent'] == 'Japan.']
+  viz_correlation_jp = sns.heatmap(df[df['continent'] == 'Japan.'].corr(),
                                    center=0,
                                    cmap = sns.color_palette("vlag", as_cmap=True)
                                   )
