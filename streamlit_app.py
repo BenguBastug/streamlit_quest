@@ -41,7 +41,7 @@ if region == 'Japan':
   plt.title("HeatMap Japan")
   st.pyplot(viz_correlation_jp.figure)
 
-if dropdown == 'All Regions':
+if region == 'All Regions':
   df
   viz_correlation = sns.heatmap(df.corr(),
                                 center=0,
