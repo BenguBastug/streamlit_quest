@@ -5,37 +5,36 @@ import matplotlib.pyplot as plt
 
 st.title("Let's explore cars!")
 link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
-df_cars = pd.read_csv(link)
+df = pd.read_csv(link)
 
-cars_eu = df_cars.loc[df_cars['continent'] == 'Europe.']
-cars_us = df_cars.loc[df_cars['continent'] == 'US.']
-cars_jp = df_cars.loc[df_cars['continent'] == 'Japan.']
+#cars_eu = df[df['continent'] == 'Europe.']
+#cars_us = df[df['continent'] == 'US.']
+#cars_jp = df[df['continent'] == 'Japan.']
 
 continents = ['US','Europe','Japan','All Regions']
-dropdown = st.selectbox('Select a Region:', continents)
-st.write('**You have selected:**',dropdown)
+region = st.sidebar.selectbox('Select Region:', continents)
 
-if dropdown == 'Europe':
-  st.write(cars_eu)
-  viz_correlation_eu = sns.heatmap(cars_eu.corr(),
+if region == 'Europe':
+  df = df[df['continent'] == 'Europe.']
+  viz_correlation_eu = sns.heatmap(df.corr(),
                                    center=0,
                                    cmap = sns.color_palette("vlag", as_cmap=True)
                                   )
   plt.title("HeatMap Europe")
   st.pyplot(viz_correlation_eu.figure)
 
-if dropdown == 'US':
-  st.write(cars_us)
-  viz_correlation_us = sns.heatmap(cars_us.corr(),
+if region == 'US':
+  df = df[df['continent'] == 'US.']
+  viz_correlation_us = sns.heatmap(df.corr(),
                                    center=0,
                                    cmap = sns.color_palette("vlag", as_cmap=True)
                                   )
   plt.title("HeatMap US")
   st.pyplot(viz_correlation_us.figure)
 
-if dropdown == 'Japan':
-  st.write(cars_jp)
-  viz_correlation_jp = sns.heatmap(cars_jp.corr(),
+if region == 'Japan':
+  df = df[df['continent'] == 'Japan.']
+  viz_correlation_jp = sns.heatmap(df.corr(),
                                    center=0,
                                    cmap = sns.color_palette("vlag", as_cmap=True)
                                   )
@@ -43,8 +42,8 @@ if dropdown == 'Japan':
   st.pyplot(viz_correlation_jp.figure)
 
 if dropdown == 'All Regions':
-  df_cars
-  viz_correlation = sns.heatmap(df_cars.corr(),
+  df
+  viz_correlation = sns.heatmap(df.corr(),
                                 center=0,
                                 cmap = sns.color_palette("vlag", as_cmap=True)
                                 )
