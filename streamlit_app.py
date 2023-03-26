@@ -7,15 +7,16 @@ st.title("Let's explore cars!")
 link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv"
 df = pd.read_csv(link)
 
-#cars_eu = df[df['continent'] == 'Europe.']
-#cars_us = df[df['continent'] == 'US.']
-#cars_jp = df[df['continent'] == 'Japan.']
+cars_eu = df[df['continent'] == ' Europe.']
+cars_us = df[df['continent'] == ' US.']
+cars_jp = df[df['continent'] == ' Japan.']
 
 continents = ['US','Europe','Japan','All Regions']
 region = st.selectbox('Select Region:', continents)
 
 if region == 'Europe':
-  viz_correlation_eu = sns.heatmap(df[df['continent'] == 'Europe.'].corr(),
+  cars_eu
+  viz_correlation_eu = sns.heatmap(cars_eu.corr(),
                                    center=0,
                                    cmap = sns.color_palette("vlag", as_cmap=True)
                                   )
@@ -23,8 +24,8 @@ if region == 'Europe':
   st.pyplot(viz_correlation_eu.figure)
 
 if region == 'US':
-#  df = df[df['continent'] == 'US.']
-  viz_correlation_us = sns.heatmap(df[df['continent'] == 'US.'].corr(),
+  cars_us
+  viz_correlation_us = sns.heatmap(cars_us.corr(),
                                    center=0,
                                    cmap = sns.color_palette("vlag", as_cmap=True)
                                   )
@@ -32,8 +33,8 @@ if region == 'US':
   st.pyplot(viz_correlation_us.figure)
 
 if region == 'Japan':
-#  df = df[df['continent'] == 'Japan.']
-  viz_correlation_jp = sns.heatmap(df[df['continent'] == 'Japan.'].corr(),
+  cars_jp
+  viz_correlation_jp = sns.heatmap(cars_jp.corr(),
                                    center=0,
                                    cmap = sns.color_palette("vlag", as_cmap=True)
                                   )
