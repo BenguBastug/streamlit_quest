@@ -43,13 +43,6 @@ if region == 'Japan':
 
 if region == 'All Regions':
   df
-  viz_correlation = sns.heatmap(df.corr(),
-                                center=0,
-                                cmap = sns.color_palette("vlag", as_cmap=True)
-                                )
-  plt.title("HeatMap All Regions")
-  st.pyplot(viz_correlation.figure)
-
   viz_scatter = sns.scatterplot(data = df,
                   x = 'weightlbs',
                   y = 'hp',
@@ -59,3 +52,11 @@ if region == 'All Regions':
                   )
   plt.title("Weight-Hp")
   st.pyplot(viz_scatter.figure)
+  
+  viz_correlation = sns.heatmap(df.corr(),
+                                center=0,
+                                cmap = sns.color_palette("vlag", as_cmap=True)
+                                )
+  plt.title("HeatMap All Regions")
+  st.pyplot(viz_correlation.figure)
+
